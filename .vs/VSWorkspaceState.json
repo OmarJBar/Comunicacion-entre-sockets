@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\evaQ",
+    "\\evaQ\\evaQ",
+    "\\evaQ\\evaQ\\DTO"
   ],
-  "SelectedNode": "\\C:\\Users\\user-pc\\Source\\Repos\\eva1",
+  "SelectedNode": "\\evaQ\\evaQ\\DTO\\Medidor.cs",
   "PreviewInSolutionExplorer": false
 }

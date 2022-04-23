@@ -1,0 +1,3 @@
+C:\Users\user-pc\Source\Repos\eva1\evaQ\evaQ\obj\Debug\evaQ.csproj.AssemblyReference.cache
+C:\Users\user-pc\Source\Repos\eva1\evaQ\evaQ\obj\Debug\evaQ.csproj.SuggestedBindingRedirects.cache
+C:\Users\user-pc\Source\Repos\eva1\evaQ\evaQ\obj\Debug\evaQ.csproj.CoreCompileInputs.cache

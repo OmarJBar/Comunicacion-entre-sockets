@@ -13,6 +13,6 @@ namespace evaQ.DAL
 
         List<Medidor> ObtenerMedidores();
 
-        List<Medidor> FiltrarMedidores(string medidor);
+        List<Medidor> FiltrarMedidores(int medidor);
     }
 }

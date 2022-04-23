@@ -7,21 +7,23 @@ using evaQ.DTO;
 
 namespace evaQ.DAL
 {
-    class MedidorObjects : IMedidor
+    public class MedidorObjects : IMedidor
     {
-        public void AgregarMedidor(Medidor persona)
+        private static List<Medidor> medidores = new List<Medidor>();
+
+        public void AgregarMedidor(Medidor medidor)
         {
-            throw new NotImplementedException();
+            medidores.Add(medidor);
         }
 
-        public List<Medidor> FiltrarMedidores(string medidor)
+        public List<Medidor> FiltrarMedidores(int medidor)
         {
-            throw new NotImplementedException();
+            return medidores.FindAll(me=>me.MedidorNro==medidor);
         }
 
         public List<Medidor> ObtenerMedidores()
         {
-            throw new NotImplementedException();
+            return medidores;
         }
     }
 }
