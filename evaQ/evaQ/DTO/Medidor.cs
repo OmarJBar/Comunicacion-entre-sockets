@@ -25,9 +25,12 @@ namespace evaQ.DTO
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al intentar parsear la fecha");
+                DateTime fechaGet = DateTime.Now;
+                Console.WriteLine("Error al intentar parsear la fecha, se ingreso al fecha actual ({0})", fechaGet);
                 Console.WriteLine("Error tipo {0}", e);
                 Console.ReadKey();
+
+                this.fecha = fechaGet;
             }           
         }
     }

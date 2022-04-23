@@ -45,32 +45,22 @@ namespace evaQ.Operations
 
             do
             {
-                Console.WriteLine("Ingrese peso");
+                Console.WriteLine("Ingrese consumo");
                 esValido = double.TryParse(Console.ReadLine().Trim(), out consumo);
             } while (!esValido);
 
             do
             {
-                Console.WriteLine("Ingrese nombre");
+                Console.WriteLine("Ingrese fecha");
                 fecha = Console.ReadLine().Trim();
             } while (fecha.Equals(string.Empty));
 
-            Medidor p = new Medidor()
-            { MedidorNro = medidorNro, Consumo = consumo, parseFecha(fecha) };
+            Medidor me = new Medidor()
+            { MedidorNro = medidorNro, Consumo = consumo, };
+            me.parseFecha(fecha);
+            medidorDAL.AgregarMedidor(me);
 
-            //------ en proceso, aqui falta hacer que reemplace lo del tipo fecha con la funcion parseFecha()
-            /*
-
-            personasDAL.AgregarPersona(p);
-
-            Console.WriteLine("Nombre : {0}", p.Nombre);
-            Console.WriteLine("Telefono : {0}", p.Telefono);
-            Console.WriteLine("Peso : {0}", p.Peso);
-            Console.WriteLine("Estatura : {0}", p.Estatura);
-            Console.WriteLine("IMC : {0}", p.IMC.Texto);
-            Console.ReadKey();
-            */
-
+            medidorDAL.FiltrarMedidores(me.MedidorNro);
         }
     }
 }
