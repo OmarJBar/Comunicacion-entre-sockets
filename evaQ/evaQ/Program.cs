@@ -26,7 +26,7 @@ namespace evaQ
                     //Ingresar
                     break;
                 case "2":
-                    //Mostrar
+                    ShowMedidores();
                     break;
                 case "3":
                     //buscar

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace evaQ.Operations
+namespace evaQ
 {
     public partial class Program
     {
@@ -32,7 +32,7 @@ namespace evaQ.Operations
             int medidorNro;
             string fecha;
             double consumo;
-        Console.WriteLine("Bienvenido al programa");
+        Console.WriteLine("__Agregar_Medidor__");
 
             bool esValido;
 
@@ -50,9 +50,20 @@ namespace evaQ.Operations
             } while (!esValido);
 
             do
-            {
-                Console.WriteLine("Ingrese fecha");
-                fecha = Console.ReadLine().Trim();
+            {/*
+                Console.WriteLine("Ingrese dia");
+
+                Console.WriteLine("Ingrese mes");
+
+                Console.WriteLine("Ingrese año");
+
+                Console.WriteLine("Ingrese hora de medicion");
+
+                Console.WriteLine("Ingrese minuto de medicion");
+
+                fecha = Console.ReadLine().Trim();*/
+
+                fecha = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             } while (fecha.Equals(string.Empty));
 
             Medidor me = new Medidor()

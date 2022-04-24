@@ -19,7 +19,7 @@ namespace evaQ.DTO
         {
             try
             {
-                DateTime fechaGet = Convert.ToDateTime(date); ;
+                DateTime fechaGet = Convert.ToDateTime(date); 
 
                 this.fecha = fechaGet;
             }
