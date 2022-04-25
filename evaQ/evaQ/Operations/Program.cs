@@ -67,8 +67,8 @@ namespace evaQ
             } while (fecha.Equals(string.Empty));
 
             Medidor me = new Medidor()
-            { MedidorNro = medidorNro, Consumo = consumo, };
-            me.parseFecha(fecha);
+            { MedidorNro = medidorNro, Consumo = consumo, Fecha=Convert.ToDateTime(fecha)};
+            
             medidorDAL.AgregarMedidor(me);
 
             medidorDAL.FiltrarMedidores(me.MedidorNro);

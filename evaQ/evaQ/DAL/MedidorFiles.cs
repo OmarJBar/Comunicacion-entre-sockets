@@ -1,10 +1,7 @@
-﻿using System;
+﻿using evaQ.DTO;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using evaQ.DTO;
 
 namespace evaQ.DAL
 {
@@ -13,13 +10,13 @@ namespace evaQ.DAL
     /// </summary>
     public class MedidorFiles : IMedidor
     {
-        private static string fileName="medidores.txt";
-        private static string ruta = Directory.GetCurrentDirectory()+"/"+fileName;
+        private static string fileName = "medidores.txt";
+        private static string ruta = Directory.GetCurrentDirectory() + "/" + fileName;
         public void AgregarMedidor(Medidor medidor)
         {
             try
             {
-                using (StreamWriter writer = new StreamWriter(fileName, true))
+                using (StreamWriter writer = new StreamWriter(ruta, true))
                 {
                     string text = medidor.MedidorNro + "|" + medidor.Fecha + "|"
                                    + medidor.Consumo + "|";
@@ -29,7 +26,7 @@ namespace evaQ.DAL
             }
             catch (Exception error)
             {
-                Console.WriteLine("Hubo un error agregando el medidor"+ error.Message);
+                Console.WriteLine("Hubo un error agregando el medidor" + error.Message);
                 Console.WriteLine("Presione una tecla para continuar...");
                 Console.ReadKey();
             }
@@ -43,7 +40,7 @@ namespace evaQ.DAL
         public List<Medidor> ObtenerMedidores()
         {
             List<Medidor> medidores = new List<Medidor>();
-            using (StreamReader reader=new StreamReader(ruta))
+            using (StreamReader reader = new StreamReader(ruta))
             {
                 string text;
                 do
@@ -61,13 +58,13 @@ namespace evaQ.DAL
                             Fecha = fecha,
                             Consumo = consumo,
                         };
-
+                        Console.WriteLine(ruta);
                         medidores.Add(me);
 
                     }
                 } while (text != null);
             }
-                return medidores;
+            return medidores;
         }
     }
 }

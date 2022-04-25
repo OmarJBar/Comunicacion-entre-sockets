@@ -23,13 +23,13 @@ namespace evaQ
             switch (Console.ReadLine().Trim())
             {
                 case "1":
-                    //Ingresar
+                    AddMedidor();
                     break;
                 case "2":
                     ShowMedidores();
                     break;
                 case "3":
-                    //buscar
+                    SearchMedidor();
                     break;
                 case "0": exit = false;
                     //salir

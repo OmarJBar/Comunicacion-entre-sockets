@@ -1,3 +1,9 @@
 C:\Users\user-pc\Source\Repos\eva1\evaQ\evaQ\obj\Debug\evaQ.csproj.AssemblyReference.cache
 C:\Users\user-pc\Source\Repos\eva1\evaQ\evaQ\obj\Debug\evaQ.csproj.SuggestedBindingRedirects.cache
 C:\Users\user-pc\Source\Repos\eva1\evaQ\evaQ\obj\Debug\evaQ.csproj.CoreCompileInputs.cache
+C:\Users\omar\Source\Repos\OmarJBar\eva1\evaQ\evaQ\bin\Debug\evaQ.exe.config
+C:\Users\omar\Source\Repos\OmarJBar\eva1\evaQ\evaQ\bin\Debug\evaQ.exe
+C:\Users\omar\Source\Repos\OmarJBar\eva1\evaQ\evaQ\bin\Debug\evaQ.pdb
+C:\Users\omar\Source\Repos\OmarJBar\eva1\evaQ\evaQ\obj\Debug\evaQ.csproj.CoreCompileInputs.cache
+C:\Users\omar\Source\Repos\OmarJBar\eva1\evaQ\evaQ\obj\Debug\evaQ.exe
+C:\Users\omar\Source\Repos\OmarJBar\eva1\evaQ\evaQ\obj\Debug\evaQ.pdb
