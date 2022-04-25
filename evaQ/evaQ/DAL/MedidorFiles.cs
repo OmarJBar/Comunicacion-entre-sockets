@@ -18,8 +18,11 @@ namespace evaQ.DAL
             {
                 using (StreamWriter writer = new StreamWriter(ruta, true))
                 {
-                    string text = medidor.MedidorNro + "|" + medidor.Fecha + "|"
-                                   + medidor.Consumo + "|";
+                    string text = 
+                        medidor.MedidorNro + "|" 
+                        + medidor.Fecha + "|"
+                        + medidor.Consumo + "|";
+
                     writer.WriteLine(text);
                     writer.Flush();
                 }
