@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{01A7E4FA-D256-4613-81E3-BD4C0E82BB8D}</ProjectGuid>
+    <ProjectGuid>{EE9EFC68-0470-4398-9AA6-45847A1469B5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ServerSocket</RootNamespace>
-    <AssemblyName>ServerSocket</AssemblyName>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,13 +51,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UtilsClient\UtilsClient.csproj">
+      <Project>{0311d25c-8554-4012-9954-26fbe17d4149}</Project>
+      <Name>UtilsClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UtilsMedidor\UtilsMedidor.csproj">
       <Project>{9f97dc63-9c80-4cda-954f-a2fc06b8e04a}</Project>
       <Name>UtilsMedidor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UtilsServer\UtilsServer.csproj">
-      <Project>{1a166ef9-4b97-422d-846d-7c9757ef3264}</Project>
-      <Name>UtilsServer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

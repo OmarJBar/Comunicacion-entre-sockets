@@ -1,0 +1,5 @@
+C:\Users\omar\source\repos\eva1\evaQ\UtilsServer\bin\Debug\UtilsServer.dll
+C:\Users\omar\source\repos\eva1\evaQ\UtilsServer\bin\Debug\UtilsServer.pdb
+C:\Users\omar\source\repos\eva1\evaQ\UtilsServer\obj\Debug\UtilsServer.csproj.CoreCompileInputs.cache
+C:\Users\omar\source\repos\eva1\evaQ\UtilsServer\obj\Debug\UtilsServer.dll
+C:\Users\omar\source\repos\eva1\evaQ\UtilsServer\obj\Debug\UtilsServer.pdb
