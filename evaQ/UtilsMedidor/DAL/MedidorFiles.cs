@@ -5,11 +5,27 @@ using UtilsMedidor.DTO;
 
 namespace UtilsMedidor.DAL
 {
-    /// <summary>
-    /// Medidor archivo --> Clase lista
-    /// </summary>
+    //  Singleton es un patrón de diseño del tipo creacional cuyo propósito es garantizar la
+    //  existencia de una sola instancia de una clase.Además el acceso a esa única instancia tiene que ser global.
+
+    //1. El contructor tiene que ser private
+    //2. Debe poseer un atributo del mismo tipo de la clase y estatico
+    //3. Tener un metodo GetIntance, que devuelve una referencia al atributo
     public class MedidorFiles : IMedidor
     {
+        private MedidorFiles()
+        {
+
+        }
+        private static MedidorFiles instance;
+        public static MedidorFiles GetInstance()
+        {
+            if (instance==null)
+            {
+                instance = new MedidorFiles(); //aqui si es null se le retorna el constructor vacio que actuarar como mediador para la clase a la interfaz
+            }
+            return instance;
+        }
         private static string fileName = "medidores.txt";
         private static string ruta = Directory.GetCurrentDirectory() + "/" + fileName;
         public void AgregarMedidor(Medidor medidor)

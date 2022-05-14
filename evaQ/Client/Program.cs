@@ -55,8 +55,7 @@ namespace Client
                     }
                     else if(mensaje.ToLower()=="y")
                     {
-                        ResponseServer(cliente);
-                        
+                        ResponseServer(cliente);           
                         cliente.Escribir(Console.ReadLine());
                     }
                 }
@@ -68,7 +67,7 @@ namespace Client
         }
         private static void ResponseServer(ClientSocket client)
         {
-            string response="";
+            string response;
             do
             {
                 response=client.Leer();

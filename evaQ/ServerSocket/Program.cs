@@ -81,7 +81,7 @@ namespace Server
         private static void Menu(ClientCom cliente)
         {
             string result;
-            string resp = "1. Ingresar\n2. Mostrar\n3. Buscar \n0. Salir";
+            string resp = "1. Ingresar  2. Mostrar  3. Buscar  0. Salir";
             cliente.Write(resp);
             
             switch (cliente.Read().Trim())
