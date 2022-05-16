@@ -12,7 +12,7 @@ namespace UtilsMedidor
 
     public class MenuProgram
     {
-        static IMedidor medidorDAL = new MedidorFiles();
+        private static IMedidor medidorDAL = MedidorFiles.GetInstance();
         public static string[] ShowMedidores()
         {            
             List<Medidor> medidor = medidorDAL.ObtenerMedidores();

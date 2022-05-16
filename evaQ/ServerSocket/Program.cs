@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server.Comunicacion;
+using System;
 using System.Configuration;
 using System.Net.Sockets;
 using System.Threading;
@@ -9,11 +10,10 @@ namespace Server
 {
     class Program
     {
-
         static void Main(string[] args)
         {
 
-            int port = Convert.ToInt32(ConfigurationManager.AppSettings["port"]);
+            /*int port = Convert.ToInt32(ConfigurationManager.AppSettings["port"]);
             Console.WriteLine("Iniciando servidor en puerto {0}", port);
 
             ServerSocket server = new ServerSocket(port);
@@ -39,79 +39,51 @@ namespace Server
             else
             {
                 Console.WriteLine("Puerto {0} en uso, intente mas tarde...", port);
-            }
+            }*/
+
+            ThreadServer hebra = new ThreadServer();
+            Thread t = new Thread(new ThreadStart(hebra.Ejecutar));
+            t.Start();            
+            while (Menu()) ;
 
         }
-        private static void Comunicacion(ClientCom cliente)
+        
+        static bool Menu()
         {
-
-            bool salir = false;
-            while (!salir)
-            {
-                cliente.Write("Ingresar un medidor?\n Ingrese Y para salir o N para continuar");
-                string mensaje = cliente.Read();
-
-                if (mensaje != null)
-                {
-                    if (mensaje.ToLower() == "n")
-                    {
-                        cliente.Write("Saliendo...");
-                        Thread.Sleep(2000);
-                        Console.WriteLine("Cliente salio");
-                        salir = true;
-                    }
-                    else if(mensaje.ToLower()=="y")
-                    {
-                        Console.WriteLine("-----Mostrando Menu-----");
-                        Menu(cliente);
-                    }
-                    else
-                    {
-                        cliente.Write("No se ingreso lo esperado");
-                    }
-                    
-                }
-                else
-                {
-                    cliente.Write("No se ingreso nada");
-                }
-            }
-            cliente.Disconnect();
-        }
-        private static void Menu(ClientCom cliente)
-        {
+            bool continuar=true;
             string result;
-            string resp = "1. Ingresar  2. Mostrar  3. Buscar  0. Salir";
-            cliente.Write(resp);
+            string resp = "1. Ingresar \n2. Mostrar \n3. Buscar \n0. Salir";
+            Console.WriteLine(resp);
             
-            switch (cliente.Read().Trim())
+            switch (Console.ReadLine().Trim())
             {
                 case "1":
-                    string[] array = DatosCliente(cliente);
+                    string[] array = DatosCliente();
                     result = MenuProgram.AddMedidor(Convert.ToInt32(array[0]), Convert.ToDouble(array[1]));
-                    cliente.Write(result);
+                    Console.WriteLine(result);
                     break;
                 case "2":
                     string[] values = MenuProgram.ShowMedidores();
-                    cliente.Write(String.Join("\n", values));
+                    Console.WriteLine(String.Join("\n", values));
                     break;
                 case "3":
-                    cliente.Write("Ingrese el nombre del medidor");
-                    result= MenuProgram.SearchMedidor(cliente.Read().Trim());
-                    Console.WriteLine("Se ingreso el medidor: {0}",result);
-                    cliente.Write(result);
+                    Console.WriteLine("Ingrese el nombre del medidor");
+                    result= MenuProgram.SearchMedidor(Console.ReadLine().Trim());
+                    Console.WriteLine("Se ingreso el medidor: {0}",result);                    
                     break;
                 case "0":
-                    cliente.Write("Saliendo");
+                    Console.WriteLine("Saliendo");
                     Thread.Sleep(5000);
+                    continuar= false;
                     break;
                 default:
-                    cliente.Write("No se encontro la opcion elegida...");
+                    Console.WriteLine("No se encontro la opcion elegida...");
                     Thread.Sleep(2000);
                     break;
             }
+            return continuar;
         }
-        private static string[] DatosCliente(ClientCom client)
+        private static string[] DatosCliente()
         {
             bool esValido;
             string[] array = new string[2];
@@ -120,14 +92,14 @@ namespace Server
 
             do
             {
-                client.Write("Ingrese numero");
-                esValido = Int32.TryParse(client.Read().Trim(), out medidorNro);
+                Console.WriteLine("Ingrese numero");
+                esValido = Int32.TryParse(Console.ReadLine().Trim(), out medidorNro);
             } while (!esValido);
 
             do
             {
-                client.Write("Ingrese consumo");
-                esValido = double.TryParse(client.Read().Trim(), out consumo);
+                Console.WriteLine("Ingrese consumo");
+                esValido = double.TryParse(Console.ReadLine().Trim(), out consumo);
             } while (!esValido);
 
             array[0] = medidorNro.ToString();

@@ -18,7 +18,7 @@ namespace UtilsMedidor.DAL
 
         }
         private static MedidorFiles instance;
-        public static MedidorFiles GetInstance()
+        public static IMedidor GetInstance()
         {
             if (instance==null)
             {
