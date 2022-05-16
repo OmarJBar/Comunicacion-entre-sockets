@@ -33,7 +33,7 @@ namespace Server.Comunicacion
             bool salir = false;
             while (!salir)
             {
-                cliente.Write("Ingresar un medidor?\n Ingrese Y para salir o N para continuar");
+                cliente.Write("Ingrese Y para agregar medidro, para salir N");
                 string mensaje = cliente.Read();
 
                 if (mensaje != null)
@@ -67,7 +67,7 @@ namespace Server.Comunicacion
         {
             bool continuar = true;
             string result;
-            string resp = "1. Ingresar \n2. Mostrar \n3. Buscar \n0. Salir";
+            string resp = "1. Ingresar --- 2. Mostrar --- 3. Buscar --- 0. Salir";
             cliente.Write(resp);
 
             switch (cliente.Read().Trim())
